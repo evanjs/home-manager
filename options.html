@@ -1558,6 +1558,18 @@ The options are
     </p></dd></dl></div><p>
 </p><p><span class="emphasis"><em>Type:</em></span> one of "silent", "notify", "show"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">"notify"</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/news.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/news.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-nix.package"></a><a class="term" href="options.html#opt-nix.package"><code class="option">nix.package</code></a></span></dt><dd><p>The Nix package that the configuration should be generated for.
+</p><p><span class="emphasis"><em>Type:</em></span> null or package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">pkgs.nix</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/nix.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/misc/nix.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-nix.checkConfig"></a><a class="term" href="options.html#opt-nix.checkConfig"><code class="option">nix.checkConfig</code></a></span></dt><dd><p>If enabled (the default), checks for data type mismatches and that Nix
+can parse the generated nix.conf.
+</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/nix.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/misc/nix.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-nix.extraOptions"></a><a class="term" href="options.html#opt-nix.extraOptions"><code class="option">nix.extraOptions</code></a></span></dt><dd><p>Additional text appended to <code class="filename">nix.conf</code>.</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">""</code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+keep-outputs = true
+keep-derivations = true
+''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/nix.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/misc/nix.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-nix.registry"></a><a class="term" href="options.html#opt-nix.registry"><code class="option">nix.registry</code></a></span></dt><dd><p>User level flake registry.
 </p><p><span class="emphasis"><em>Type:</em></span> attribute set of submodules</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         {
@@ -1584,6 +1596,24 @@ match with a reference like <code class="literal">nixpkgs/nixos-20.03</code>.
         owner = "my-org"; repo = "my-nixpkgs"; type = "github"; 
         }
     </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/nix.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/misc/nix.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-nix.settings"></a><a class="term" href="options.html#opt-nix.settings"><code class="option">nix.settings</code></a></span></dt><dd><p>Configuration for Nix, see
+<a class="link" href="https://nixos.org/manual/nix/stable/#sec-conf-file" target="_top">https://nixos.org/manual/nix/stable/#sec-conf-file</a> or
+<span class="citerefentry"><span class="refentrytitle">nix.conf</span>(5)</span> for avalaible options.
+The value declared here will be translated directly to the key-value pairs Nix expects.
+</p><p>
+Configuration specified in <code class="option">nix.extraOptions</code> which will be appended
+verbatim to the resulting config file.
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of Nix config atom (null, bool, int, float, str, path or package) or list of Nix config atom (null, bool, int, float, str, path or package)ss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        {
+        
+        }
+    </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  use-sandbox = true;
+  show-trace = true;
+  system-features = [ "big-parallel" "kvm" "recursive-nix" ];
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/nix.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/nix.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-nixpkgs.config"></a><a class="term" href="options.html#opt-nixpkgs.config"><code class="option">nixpkgs.config</code></a></span></dt><dd><p>The configuration of the Nix Packages collection. (For
 details, see the Nixpkgs documentation.) It allows you to set
@@ -5102,6 +5132,8 @@ with this enabled only the relative name is shown.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neovim.package"></a><a class="term" href="options.html#opt-programs.neovim.package"><code class="option">programs.neovim.package</code></a></span></dt><dd><p>The package to use for the neovim binary.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">pkgs.neovim-unwrapped</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/neovim.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neovim.coc.enable"></a><a class="term" href="options.html#opt-programs.neovim.coc.enable"><code class="option">programs.neovim.coc.enable</code></a></span></dt><dd><p>Whether to enable Coc.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/neovim.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neovim.coc.pluginConfig"></a><a class="term" href="options.html#opt-programs.neovim.coc.pluginConfig"><code class="option">programs.neovim.coc.pluginConfig</code></a></span></dt><dd><p>Script to configure CoC. Must be viml.</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">""</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/neovim.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neovim.coc.settings"></a><a class="term" href="options.html#opt-programs.neovim.coc.settings"><code class="option">programs.neovim.coc.settings</code></a></span></dt><dd><p>Extra configuration lines to add to
 <code class="filename">$XDG_CONFIG_HOME/nvim/coc-settings.json</code>
@@ -11143,6 +11175,14 @@ detrimental to performance in some setups
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.bspwm.enable"></a><a class="term" href="options.html#opt-xsession.windowManager.bspwm.enable"><code class="option">xsession.windowManager.bspwm.enable</code></a></span></dt><dd><p>Whether to enable bspwm window manager.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/bspwm/default.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/bspwm/default.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.bspwm.package"></a><a class="term" href="options.html#opt-xsession.windowManager.bspwm.package"><code class="option">xsession.windowManager.bspwm.package</code></a></span></dt><dd><p>The bspwm package to use.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">pkgs.bspwm</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">pkgs.bspwm-unstable</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/bspwm/default.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/bspwm/default.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.bspwm.alwaysResetDesktops"></a><a class="term" href="options.html#opt-xsession.windowManager.bspwm.alwaysResetDesktops"><code class="option">xsession.windowManager.bspwm.alwaysResetDesktops</code></a></span></dt><dd><p>If set to <code class="literal">true</code>, desktops configured in <code class="option">monitors</code> will be reset
+every time the config is run.
+
+If set to <code class="literal">false</code>, desktops will only be configured the first time the config is run.
+This is useful if you want to dynamically add desktops and you don't want them to be destroyed if you
+re-run <code class="literal">bspwmrc</code>.
+</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/bspwm/default.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/bspwm/default.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.bspwm.extraConfig"></a><a class="term" href="options.html#opt-xsession.windowManager.bspwm.extraConfig"><code class="option">xsession.windowManager.bspwm.extraConfig</code></a></span></dt><dd><p>Additional shell commands to be run at the end of the config file.</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">""</code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
 bspc subscribe all &gt; ~/bspc-report.log &amp;
