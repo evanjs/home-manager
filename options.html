@@ -180,7 +180,7 @@ indicate the nature of the provider.
 When this indicates a specific provider then, for example,
 the IMAP, SMTP, and JMAP server configuration may be set
 automatically.
-</p><p><span class="emphasis"><em>Type:</em></span> one of "plain", "gmail.com", "runbox.com", "fastmail.com"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">"plain"</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/accounts/email.nix#blob-path" target="_top">
+</p><p><span class="emphasis"><em>Type:</em></span> one of "plain", "gmail.com", "runbox.com", "fastmail.com", "yandex.com", "outlook.office365.com"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">"plain"</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/accounts/email.nix#blob-path" target="_top">
                     &lt;home-manager/modules/accounts/email.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.folders"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.folders"><code class="option">accounts.email.accounts.&lt;name&gt;.folders</code></a></span></dt><dd><p>Standard email folders.
 </p><p><span class="emphasis"><em>Type:</em></span> submodule</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
@@ -1001,7 +1001,7 @@ does not modify, the state of the system and exits if an
 unexpected state is found. For example, the
 <code class="literal">checkLinkTargets</code> script block checks for
 collisions between non-managed files and files defined in
-<code class="varname"><a class="link" href="options.html#opt-home.file">home.file</a></code>.
+<a class="xref" href="options.html#opt-home.file"><code class="option">home.file</code></a>.
 
 </p><p>
 
@@ -1077,7 +1077,7 @@ are symbolic links to the files of the source directory.
 </p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/files.nix#blob-path" target="_top">
                     &lt;home-manager/modules/files.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.file._name_.source"></a><a class="term" href="options.html#opt-home.file._name_.source"><code class="option">home.file.&lt;name&gt;.source</code></a></span></dt><dd><p>Path of the source file or directory. If
-<a class="link" href="options.html#opt-home.file._name_.text">home.file.&lt;name?&gt;.text</a>
+<a class="xref" href="options.html#opt-home.file._name_.text"><code class="option">home.file.&lt;name&gt;.text</code></a>
 is non-null then this option will automatically point to a file
 containing that text.
 </p><p><span class="emphasis"><em>Type:</em></span> path</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/files.nix#blob-path" target="_top">
@@ -1086,7 +1086,7 @@ containing that text.
 </p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">&lt;name&gt;</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/files.nix#blob-path" target="_top">
                     &lt;home-manager/modules/files.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.file._name_.text"></a><a class="term" href="options.html#opt-home.file._name_.text"><code class="option">home.file.&lt;name&gt;.text</code></a></span></dt><dd><p>Text of the file. If this option is null then
-<a class="link" href="options.html#opt-home.file._name_.source">home.file.&lt;name?&gt;.source</a>
+<a class="xref" href="options.html#opt-home.file._name_.source"><code class="option">home.file.&lt;name&gt;.source</code></a>
 must be set.
 </p><p><span class="emphasis"><em>Type:</em></span> null or strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/files.nix#blob-path" target="_top">
                     &lt;home-manager/modules/files.nix&gt;
@@ -1176,9 +1176,9 @@ Top-level options declared under this submodule are backend indepedent
 options. Options declared under namespaces such as <code class="literal">x11</code>
 are backend specific options. By default, only backend independent cursor
 configurations are generated. If you need configurations for specific
-backends, you can toggle them via the enable option. For example, <code class="varname">
-<a class="link" href="options.html#opt-home.pointerCursor.x11.enable">home.pointerCursor.x11.enable</a>
-</code> will enable x11 cursor configurations.
+backends, you can toggle them via the enable option. For example,
+<a class="xref" href="options.html#opt-home.pointerCursor.x11.enable"><code class="option">home.pointerCursor.x11.enable</code></a>
+will enable x11 cursor configurations.
 </p><p><span class="emphasis"><em>Type:</em></span> null or submodule</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/config/home-cursor.nix#blob-path" target="_top">
                     &lt;home-manager/modules/config/home-cursor.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.pointerCursor.package"></a><a class="term" href="options.html#opt-home.pointerCursor.package"><code class="option">home.pointerCursor.package</code></a></span></dt><dd><p>Package providing the cursor theme.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">pkgs.vanilla-dmz</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/config/home-cursor.nix#blob-path" target="_top">
@@ -2957,7 +2957,7 @@ extensions inside Firefox after the first installation.
 
 Extensions listed here will only be available in Firefox
 profiles managed through the
-<a class="link" href="options.html#opt-programs.firefox.profiles">programs.firefox.profiles</a>
+<a class="xref" href="options.html#opt-programs.firefox.profiles"><code class="option">programs.firefox.profiles</code></a>
 option. This is due to recent changes in the way Firefox
 handles extension side-loading.
 </p><p><span class="emphasis"><em>Type:</em></span> list of package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
@@ -3637,9 +3637,7 @@ presses the <span class="emphasis"><em>Delete</em></span> key.
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/go.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/go.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.go.extraGoPaths"></a><a class="term" href="options.html#opt-programs.go.extraGoPaths"><code class="option">programs.go.extraGoPaths</code></a></span></dt><dd><p>Extra <code class="envar">GOPATH</code>s relative to <code class="envar">HOME</code> appended
-after
-<code class="varname"><a class="link" href="options.html#opt-programs.go.goPath">programs.go.goPath</a></code>,
-if that option is set.
+after <a class="xref" href="options.html#opt-programs.go.goPath"><code class="option">programs.go.goPath</code></a>, if that option is set.
 </p><p><span class="emphasis"><em>Type:</em></span> list of string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         [
         
@@ -8367,7 +8365,7 @@ this option) to command strings or directly to build outputs.
 }
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zsh.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/zsh.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.zsh.shellGlobalAliases"></a><a class="term" href="options.html#opt-programs.zsh.shellGlobalAliases"><code class="option">programs.zsh.shellGlobalAliases</code></a></span></dt><dd><p>Similar to <code class="varname"><a class="link" href="options.html#opt-programs.zsh.shellAliases">opt-programs.zsh.shellAliases</a></code>,
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.zsh.shellGlobalAliases"></a><a class="term" href="options.html#opt-programs.zsh.shellGlobalAliases"><code class="option">programs.zsh.shellGlobalAliases</code></a></span></dt><dd><p>Similar to <a class="xref" href="options.html#opt-programs.zsh.shellAliases"><code class="option">programs.zsh.shellAliases</code></a>,
 but are substituted anywhere on a line.
 </p><p><span class="emphasis"><em>Type:</em></span> attribute set of string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         {
@@ -8488,6 +8486,10 @@ percent symbol).
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.clipmenu.enable"></a><a class="term" href="options.html#opt-services.clipmenu.enable"><code class="option">services.clipmenu.enable</code></a></span></dt><dd><p>Whether to enable clipmenu, the clipboard management daemon.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/clipmenu.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/clipmenu.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.clipmenu.package"></a><a class="term" href="options.html#opt-services.clipmenu.package"><code class="option">services.clipmenu.package</code></a></span></dt><dd><p>clipmenu derivation to use.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">"pkgs.clipmenu"</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/clipmenu.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/clipmenu.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.clipmenu.launcher"></a><a class="term" href="options.html#opt-services.clipmenu.launcher"><code class="option">services.clipmenu.launcher</code></a></span></dt><dd><p>Launcher command, if not set, <span class="command"><strong>dmenu</strong></span>
+will be used by default.
+</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">"rofi"</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/clipmenu.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/clipmenu.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.devilspie2.enable"></a><a class="term" href="options.html#opt-services.devilspie2.enable"><code class="option">services.devilspie2.enable</code></a></span></dt><dd><p>Whether to enable Devilspie2, a window matching utility, allowing the user to
 perform scripted actions on windows as they are created.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/devilspie2.nix#blob-path" target="_top">
@@ -9819,6 +9821,23 @@ click-right=pavucontrol &amp;
                     &lt;home-manager/modules/services/polybar.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.poweralertd.enable"></a><a class="term" href="options.html#opt-services.poweralertd.enable"><code class="option">services.poweralertd.enable</code></a></span></dt><dd><p>Whether to enable the Upower-powered power alerterd.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/poweralertd.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/poweralertd.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.pueue.enable"></a><a class="term" href="options.html#opt-services.pueue.enable"><code class="option">services.pueue.enable</code></a></span></dt><dd><p>Whether to enable Pueue, CLI process scheduler and manager.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/pueue.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/pueue.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.pueue.package"></a><a class="term" href="options.html#opt-services.pueue.package"><code class="option">services.pueue.package</code></a></span></dt><dd><p>The pueue package to use.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">pkgs.pueue</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/pueue.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/pueue.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.pueue.settings"></a><a class="term" href="options.html#opt-services.pueue.settings"><code class="option">services.pueue.settings</code></a></span></dt><dd><p>Configuration written to
+<code class="filename">$XDG_CONFIG_HOME/pueue/pueue.yml</code>.
+</p><p><span class="emphasis"><em>Type:</em></span> YAML value</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        {
+        
+        }
+    </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  daemon = {
+    default_parallel_tasks = 2;
+  };
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/pueue.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/pueue.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.pulseeffects.enable"></a><a class="term" href="options.html#opt-services.pulseeffects.enable"><code class="option">services.pulseeffects.enable</code></a></span></dt><dd><p>Whether to enable Pulseeffects daemon
 Note, it is necessary to add
 </p><pre class="programlisting nix">
@@ -11338,7 +11357,7 @@ See <a class="link" href="https://i3wm.org/docs/userguide.html#_focus_wrapping" 
                     &lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.config.focus.mouseWarping"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.config.focus.mouseWarping"><code class="option">wayland.windowManager.sway.config.focus.mouseWarping</code></a></span></dt><dd><p>Whether mouse cursor should be warped to the center of the window when switching focus
 to a window on a different output.
-</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix#blob-path" target="_top">
+</p><p><span class="emphasis"><em>Type:</em></span> boolean or one of "container", "output"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.config.focus.newWindow"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.config.focus.newWindow"><code class="option">wayland.windowManager.sway.config.focus.newWindow</code></a></span></dt><dd><p>This option modifies focus behavior on new window activation.
 
@@ -11698,7 +11717,7 @@ are symbolic links to the files of the source directory.
 </p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/xdg.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xdg.configFile._name_.source"></a><a class="term" href="options.html#opt-xdg.configFile._name_.source"><code class="option">xdg.configFile.&lt;name&gt;.source</code></a></span></dt><dd><p>Path of the source file or directory. If
-<a class="link" href="options.html#opt-home.file._name_.text">home.file.&lt;name?&gt;.text</a>
+<a class="xref" href="options.html#opt-home.file._name_.text"><code class="option">home.file.&lt;name&gt;.text</code></a>
 is non-null then this option will automatically point to a file
 containing that text.
 </p><p><span class="emphasis"><em>Type:</em></span> path</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg.nix#blob-path" target="_top">
@@ -11707,7 +11726,7 @@ containing that text.
 </p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">&lt;name&gt;</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/xdg.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xdg.configFile._name_.text"></a><a class="term" href="options.html#opt-xdg.configFile._name_.text"><code class="option">xdg.configFile.&lt;name&gt;.text</code></a></span></dt><dd><p>Text of the file. If this option is null then
-<a class="link" href="options.html#opt-home.file._name_.source">home.file.&lt;name?&gt;.source</a>
+<a class="xref" href="options.html#opt-home.file._name_.source"><code class="option">home.file.&lt;name&gt;.source</code></a>
 must be set.
 </p><p><span class="emphasis"><em>Type:</em></span> null or strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/xdg.nix&gt;
@@ -11749,7 +11768,7 @@ are symbolic links to the files of the source directory.
 </p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/xdg.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xdg.dataFile._name_.source"></a><a class="term" href="options.html#opt-xdg.dataFile._name_.source"><code class="option">xdg.dataFile.&lt;name&gt;.source</code></a></span></dt><dd><p>Path of the source file or directory. If
-<a class="link" href="options.html#opt-home.file._name_.text">home.file.&lt;name?&gt;.text</a>
+<a class="xref" href="options.html#opt-home.file._name_.text"><code class="option">home.file.&lt;name&gt;.text</code></a>
 is non-null then this option will automatically point to a file
 containing that text.
 </p><p><span class="emphasis"><em>Type:</em></span> path</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg.nix#blob-path" target="_top">
@@ -11758,7 +11777,7 @@ containing that text.
 </p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">&lt;name&gt;</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/xdg.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xdg.dataFile._name_.text"></a><a class="term" href="options.html#opt-xdg.dataFile._name_.text"><code class="option">xdg.dataFile.&lt;name&gt;.text</code></a></span></dt><dd><p>Text of the file. If this option is null then
-<a class="link" href="options.html#opt-home.file._name_.source">home.file.&lt;name?&gt;.source</a>
+<a class="xref" href="options.html#opt-home.file._name_.source"><code class="option">home.file.&lt;name&gt;.source</code></a>
 must be set.
 </p><p><span class="emphasis"><em>Type:</em></span> null or strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/xdg.nix&gt;
@@ -12552,7 +12571,7 @@ See <code class="option">--no-startup-id</code> option description in the i3 use
 </p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/i3.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/i3-sway/i3.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.i3.config.startup._.workspace"></a><a class="term" href="options.html#opt-xsession.windowManager.i3.config.startup._.workspace"><code class="option">xsession.windowManager.i3.config.startup.*.workspace</code></a></span></dt><dd><p>Launch application on a particular workspace. DEPRECATED:
-Use <code class="varname"><a class="link" href="options.html#opt-xsession.windowManager.i3.config.assigns">xsession.windowManager.i3.config.assigns</a></code>
+Use <a class="xref" href="options.html#opt-xsession.windowManager.i3.config.assigns"><code class="option">xsession.windowManager.i3.config.assigns</code></a>
 instead. See <a class="link" href="https://github.com/nix-community/home-manager/issues/265" target="_top">https://github.com/nix-community/home-manager/issues/265</a>.
 </p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/i3.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/i3-sway/i3.nix&gt;
