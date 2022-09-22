@@ -7927,15 +7927,30 @@ for options.
                     &lt;home-manager/modules/programs/yt-dlp.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.yt-dlp.package"></a><a class="term" href="options.html#opt-programs.yt-dlp.package"><code class="option">programs.yt-dlp.package</code></a></span></dt><dd><p>Package providing the <span class="command"><strong>yt-dlp</strong></span> tool.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">pkgs.yt-dlp</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/yt-dlp.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/yt-dlp.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.yt-dlp.extraConfig"></a><a class="term" href="options.html#opt-programs.yt-dlp.extraConfig"><code class="option">programs.yt-dlp.extraConfig</code></a></span></dt><dd><p>Configuration written to
-<code class="filename">$XDG_CONFIG_HOME/yt-dlp/config</code>. See
-<a class="link" href="https://github.com/yt-dlp/yt-dlp#configuration" target="_top">https://github.com/yt-dlp/yt-dlp#configuration</a>
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.yt-dlp.extraConfig"></a><a class="term" href="options.html#opt-programs.yt-dlp.extraConfig"><code class="option">programs.yt-dlp.extraConfig</code></a></span></dt><dd><p>Extra configuration to add to
+<code class="filename">$XDG_CONFIG_HOME/yt-dlp/config</code>.
+</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">""</code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+--update
+-F
+''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/yt-dlp.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/yt-dlp.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.yt-dlp.settings"></a><a class="term" href="options.html#opt-programs.yt-dlp.settings"><code class="option">programs.yt-dlp.settings</code></a></span></dt><dd><p>Configuration written to
+<code class="filename">$XDG_CONFIG_HOME/yt-dlp/config</code>.
+</p><p>
+Options must be specified in their <span class="quote">“<span class="quote">long form</span>”</span>, for
+example, <code class="code">update = true;</code> instead of <code class="code">U = true;</code>.
+Short options can be specified in the <code class="code">extraConfig</code> option.
+See <a class="link" href="https://github.com/yt-dlp/yt-dlp#configuration" target="_top">https://github.com/yt-dlp/yt-dlp#configuration</a>
 for explanation about possible values.
-</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">""</code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">--embed-thumbnail
---embed-subs
---sub-langs all
---downloader aria2c
---downloader-args aria2c:'-c -x8 -s8 -k1M'
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of boolean or signed integer or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        {
+        
+        }
+    </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">embed-thumbnail = true;
+embed-subs = true;
+sub-langs = "all";
+downloader = "aria2c";
+downloader-args = "aria2c:'-c -x8 -s8 -k1M'";
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/yt-dlp.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/yt-dlp.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.z-lua.enable"></a><a class="term" href="options.html#opt-programs.z-lua.enable"><code class="option">programs.z-lua.enable</code></a></span></dt><dd><p>Whether to enable z.lua.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/z-lua.nix#blob-path" target="_top">
@@ -12243,6 +12258,54 @@ in
   "${xmonad}/bin/xmonad";
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/xsession.nix#blob-path" target="_top">
                     &lt;home-manager/modules/xsession.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.fluxbox.enable"></a><a class="term" href="options.html#opt-xsession.windowManager.fluxbox.enable"><code class="option">xsession.windowManager.fluxbox.enable</code></a></span></dt><dd><p>Whether to enable Fluxbox window manager.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/fluxbox.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/fluxbox.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.fluxbox.package"></a><a class="term" href="options.html#opt-xsession.windowManager.fluxbox.package"><code class="option">xsession.windowManager.fluxbox.package</code></a></span></dt><dd><p>Package to use for running Fluxbox WM.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">pkgs.fluxbox</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/fluxbox.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/fluxbox.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.fluxbox.apps"></a><a class="term" href="options.html#opt-xsession.windowManager.fluxbox.apps"><code class="option">xsession.windowManager.fluxbox.apps</code></a></span></dt><dd><p>Apps configuration for Fluxbox, written to
+<code class="filename">~/.fluxbox/apps</code>. Look at the
+<span class="citerefentry"><span class="refentrytitle">fluxbox</span>(1)</span> manpage for details.
+</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">""</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/fluxbox.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/fluxbox.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.fluxbox.extraCommandLineArgs"></a><a class="term" href="options.html#opt-xsession.windowManager.fluxbox.extraCommandLineArgs"><code class="option">xsession.windowManager.fluxbox.extraCommandLineArgs</code></a></span></dt><dd><p>Extra command line arguments to pass to <span class="command"><strong>fluxbox</strong></span>.
+Look at the
+<span class="citerefentry"><span class="refentrytitle">fluxbox</span>(1)</span> manpage for details.
+</p><p><span class="emphasis"><em>Type:</em></span> list of string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        [
+        
+        ]
+    </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        [
+        "-log" "/tmp/fluxbox.log" 
+        ]
+    </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/fluxbox.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/fluxbox.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.fluxbox.init"></a><a class="term" href="options.html#opt-xsession.windowManager.fluxbox.init"><code class="option">xsession.windowManager.fluxbox.init</code></a></span></dt><dd><p>Init configuration for Fluxbox, written to
+<code class="filename">~/.fluxbox/init</code>. Look at the
+<span class="citerefentry"><span class="refentrytitle">fluxbox</span>(1)</span> manpage for details.
+</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">""</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/fluxbox.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/fluxbox.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.fluxbox.keys"></a><a class="term" href="options.html#opt-xsession.windowManager.fluxbox.keys"><code class="option">xsession.windowManager.fluxbox.keys</code></a></span></dt><dd><p>Keyboard shortcuts configuration for Fluxbox, written to
+<code class="filename">~/.fluxbox/keys</code>. Look at the
+<span class="citerefentry"><span class="refentrytitle">fluxbox-keys</span>(1)</span> manpage for details.
+</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">""</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/fluxbox.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/fluxbox.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.fluxbox.menu"></a><a class="term" href="options.html#opt-xsession.windowManager.fluxbox.menu"><code class="option">xsession.windowManager.fluxbox.menu</code></a></span></dt><dd><p>Menu configuration for Fluxbox, written to
+<code class="filename">~/.fluxbox/menu</code>. Look at the
+<span class="citerefentry"><span class="refentrytitle">fluxbox-menu</span>(1)</span> manpage for details.
+</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">""</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/fluxbox.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/fluxbox.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.fluxbox.slitlist"></a><a class="term" href="options.html#opt-xsession.windowManager.fluxbox.slitlist"><code class="option">xsession.windowManager.fluxbox.slitlist</code></a></span></dt><dd><p>Slitlist configuration for Fluxbox, written to
+<code class="filename">~/.fluxbox/slitlist</code>. Look at the
+<span class="citerefentry"><span class="refentrytitle">fluxbox</span>(1)</span> manpage for details.
+</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">""</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/fluxbox.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/fluxbox.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.fluxbox.windowmenu"></a><a class="term" href="options.html#opt-xsession.windowManager.fluxbox.windowmenu"><code class="option">xsession.windowManager.fluxbox.windowmenu</code></a></span></dt><dd><p>Window menu configuration for Fluxbox, written to
+<code class="filename">~/.fluxbox/windowmenu</code>. Look at the
+<span class="citerefentry"><span class="refentrytitle">fluxbox-menu</span>(1)</span>
+manpage for details.
+</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">""</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/fluxbox.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/fluxbox.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.herbstluftwm.enable"></a><a class="term" href="options.html#opt-xsession.windowManager.herbstluftwm.enable"><code class="option">xsession.windowManager.herbstluftwm.enable</code></a></span></dt><dd><p>Whether to enable herbstluftwm window manager.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/herbstluftwm.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/herbstluftwm.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.herbstluftwm.package"></a><a class="term" href="options.html#opt-xsession.windowManager.herbstluftwm.package"><code class="option">xsession.windowManager.herbstluftwm.package</code></a></span></dt><dd><p>Package providing the <span class="command"><strong>herbstluftwm</strong></span> and
