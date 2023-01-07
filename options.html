@@ -4940,7 +4940,7 @@ for more information.
 value of <code class="varname">services.mpd.musicDirectory</code> is used as the
 default if <code class="varname">services.mpd.enable</code> is
 <code class="literal">true</code>.
-</p><p><span class="emphasis"><em>Type:</em></span> null or path</p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">if pkgs.stdenv.hostPlatform.isLinux &amp;&amp; config.services.mpd.enable then
+</p><p><span class="emphasis"><em>Type:</em></span> null or (string or path convertible to it)</p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">if pkgs.stdenv.hostPlatform.isLinux &amp;&amp; config.services.mpd.enable then
   config.services.mpd.musicDirectory
 else
   null
