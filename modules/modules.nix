@@ -30,6 +30,7 @@ let
     ./misc/fontconfig.nix
     ./misc/gtk.nix
     ./misc/lib.nix
+    ./misc/mozilla-messaging-hosts.nix
     ./misc/news.nix
     ./misc/nixgl.nix
     ./misc/numlock.nix
@@ -110,6 +111,7 @@ let
     ./programs/ghostty.nix
     ./programs/git-cliff.nix
     ./programs/git-credential-oauth.nix
+    ./programs/git-worktree-switcher.nix
     ./programs/git.nix
     ./programs/gitui.nix
     ./programs/gnome-shell.nix
@@ -258,6 +260,7 @@ let
     ./programs/vifm.nix
     ./programs/vim-vint.nix
     ./programs/vim.nix
+    ./programs/vinegar.nix
     ./programs/vscode.nix
     ./programs/vscode/haskell.nix
     ./programs/pywal.nix
@@ -423,6 +426,7 @@ let
     ./services/xscreensaver.nix
     ./services/xsettingsd.nix
     ./services/xsuspender.nix
+    ./services/yubikey-agent.nix
     ./systemd.nix
     ./targets/darwin
     ./targets/generic-linux.nix

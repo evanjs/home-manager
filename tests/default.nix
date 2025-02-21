@@ -157,6 +157,7 @@ in import nmtSrc {
     ./modules/programs/git
     ./modules/programs/git-cliff
     ./modules/programs/git-credential-oauth
+    ./modules/programs/git-worktree-switcher
     ./modules/programs/go
     ./modules/programs/gpg
     ./modules/programs/gradle
@@ -241,6 +242,7 @@ in import nmtSrc {
     ./modules/programs/translate-shell
     ./modules/programs/vifm
     ./modules/programs/vim-vint
+    ./modules/programs/vinegar
     ./modules/programs/vscode
     ./modules/programs/watson
     ./modules/programs/wezterm
@@ -262,8 +264,10 @@ in import nmtSrc {
     ./modules/services/imapnotify-darwin
     ./modules/services/nix-gc-darwin
     ./modules/services/ollama/darwin
+    ./modules/services/yubikey-agent-darwin
     ./modules/targets-darwin
   ] ++ lib.optionals isLinux [
+    ./modules/config/home-cursor
     ./modules/config/i18n
     ./modules/i18n/input-method
     ./modules/misc/debug
@@ -281,6 +285,7 @@ in import nmtSrc {
     ./modules/programs/bemenu
     ./modules/programs/boxxy
     ./modules/programs/cavalier
+    ./modules/programs/eww
     ./modules/programs/firefox/firefox.nix
     ./modules/programs/firefox/floorp.nix
     ./modules/programs/foot
@@ -387,6 +392,7 @@ in import nmtSrc {
     ./modules/services/wlsunset
     ./modules/services/wob
     ./modules/services/xsettingsd
+    ./modules/services/yubikey-agent
     ./modules/systemd
     ./modules/targets-linux
   ]);
