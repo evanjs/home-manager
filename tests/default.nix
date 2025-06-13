@@ -190,6 +190,7 @@ import nmtSrc {
       ./modules/programs/cava
       ./modules/programs/clock-rs
       ./modules/programs/cmus
+      ./modules/programs/codex
       ./modules/programs/comodoro
       ./modules/programs/darcs
       ./modules/programs/dircolors
@@ -236,6 +237,7 @@ import nmtSrc {
       ./modules/programs/kubecolor
       ./modules/programs/lapce
       ./modules/programs/lazydocker
+      ./modules/programs/lazysql
       ./modules/programs/ledger
       ./modules/programs/less
       ./modules/programs/lesspipe
@@ -244,6 +246,7 @@ import nmtSrc {
       ./modules/programs/lsd
       ./modules/programs/man
       ./modules/programs/mbsync
+      ./modules/programs/mc
       ./modules/programs/meli
       ./modules/programs/mergiraf
       ./modules/programs/micro
@@ -265,6 +268,7 @@ import nmtSrc {
       ./modules/programs/nnn
       ./modules/programs/numbat
       ./modules/programs/nushell
+      ./modules/programs/nyxt
       ./modules/programs/oh-my-posh
       ./modules/programs/onlyoffice
       ./modules/programs/openstackclient
@@ -402,6 +406,7 @@ import nmtSrc {
       ./modules/programs/mpvpaper
       ./modules/programs/ncmpcpp-linux
       ./modules/programs/nh
+      ./modules/programs/niriswitcher
       ./modules/programs/onagre
       ./modules/programs/onedrive
       ./modules/programs/pqiv
